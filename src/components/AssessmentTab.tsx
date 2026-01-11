@@ -77,7 +77,7 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                         <button
                             onClick={() => onDomainChange(domainKeys[Math.max(0, currentIndex - 1)])}
                             disabled={currentIndex === 0}
-                            className="px-4 py-2 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                            className="px-4 py-2 bg-[#3051bb] text-white rounded-lg hover:bg-[#254099] transition disabled:opacity-50 disabled:cursor-not-allowed font-medium"
                         >
                             ← Previous
                         </button>
