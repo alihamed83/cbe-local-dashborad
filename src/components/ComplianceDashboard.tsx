@@ -159,25 +159,25 @@ const ComplianceDashboard = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+        <div className="min-h-screen">
             <Toaster position="top-right" />
 
             {/* Header */}
-            <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white shadow-xl">
+            <div className="bg-[#ffffff] text-gray-900 shadow-xl">
                 <div className="max-w-7xl mx-auto px-4 py-6">
                     <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-3">
                             <Shield className="w-8 h-8" />
                             <div>
                                 <h1 className="text-2xl font-bold">Egypt Financial Compliance Dashboard</h1>
-                                <p className="text-green-100 text-sm">CBE Cybersecurity Framework Interactive Assessment</p>
+                                <p className="text-gray-500 text-sm">CBE Cybersecurity Framework Interactive Assessment</p>
                             </div>
                         </div>
 
                         {/* Export Buttons */}
                         <div className="flex items-center gap-2">
                             {autoSaveStatus !== 'idle' && (
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white/20 rounded-lg text-sm">
+                                <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 rounded-lg text-sm text-gray-700">
                                     <Save className="w-4 h-4" />
                                     {autoSaveStatus === 'saving' ? 'Saving...' : 'Saved'}
                                 </div>
@@ -185,7 +185,7 @@ const ComplianceDashboard = () => {
 
                             <button
                                 onClick={handleExportPDF}
-                                className="flex items-center gap-2 px-4 py-2 bg-white text-green-700 rounded-lg hover:bg-green-50 transition font-medium"
+                                className="flex items-center gap-2 px-4 py-2 bg-[#3051bb] text-white rounded-lg hover:bg-[#254099] transition font-medium"
                             >
                                 <FileText className="w-5 h-5" />
                                 Export PDF
@@ -193,7 +193,7 @@ const ComplianceDashboard = () => {
 
                             <button
                                 onClick={handleExportExcel}
-                                className="flex items-center gap-2 px-4 py-2 bg-white text-green-700 rounded-lg hover:bg-green-50 transition font-medium"
+                                className="flex items-center gap-2 px-4 py-2 bg-[#3051bb] text-white rounded-lg hover:bg-[#254099] transition font-medium"
                             >
                                 <Download className="w-5 h-5" />
                                 Export Excel
@@ -201,12 +201,12 @@ const ComplianceDashboard = () => {
 
                             <button
                                 onClick={handleExportJSON}
-                                className="px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition font-medium"
+                                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-medium"
                             >
                                 Export JSON
                             </button>
 
-                            <label className="px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition font-medium cursor-pointer">
+                            <label className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-medium cursor-pointer">
                                 Import JSON
                                 <input
                                     type="file"
@@ -219,7 +219,7 @@ const ComplianceDashboard = () => {
                     </div>
 
                     {lastSaved && (
-                        <div className="text-xs text-green-100 mt-2">
+                        <div className="text-xs text-gray-500 mt-2">
                             Last saved: {lastSaved}
                         </div>
                     )}
@@ -227,7 +227,7 @@ const ComplianceDashboard = () => {
 
                 {/* Tabs */}
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex gap-2 border-b border-green-500">
+                    <div className="flex gap-2 border-b border-[#3051bb]">
                         {[
                             { id: 'overview', label: 'Overview' },
                             { id: 'assessment', label: 'Self-Assessment' }
@@ -236,8 +236,8 @@ const ComplianceDashboard = () => {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-6 py-3 font-medium transition ${activeTab === tab.id
-                                    ? 'bg-white text-green-700 rounded-t-lg shadow-lg'
-                                    : 'text-white hover:bg-green-500 rounded-t-lg'
+                                    ? 'bg-[#3051bb] text-white rounded-t-lg shadow-lg'
+                                    : 'text-gray-600 hover:bg-gray-100 rounded-t-lg'
                                     }`}
                             >
                                 {tab.label}

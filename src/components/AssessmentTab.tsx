@@ -84,7 +84,7 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                         <button
                             onClick={() => onDomainChange(domainKeys[Math.min(domainKeys.length - 1, currentIndex + 1)])}
                             disabled={currentIndex === domainKeys.length - 1}
-                            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                            className="px-4 py-2 bg-[#3051bb] text-white rounded-lg hover:bg-[#254099] transition disabled:opacity-50 disabled:cursor-not-allowed font-medium"
                         >
                             Next Domain →
                         </button>
@@ -99,9 +99,9 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                         <div
-                            className={`h-4 rounded-full transition-all duration-500 ${domainStats.rate >= 80 ? 'bg-green-600' :
-                                    domainStats.rate >= 50 ? 'bg-yellow-500' :
-                                        'bg-red-500'
+                            className={`h-4 rounded-full transition-all duration-500 ${domainStats.rate >= 80 ? 'bg-[#3051bb]' :
+                                domainStats.rate >= 50 ? 'bg-yellow-500' :
+                                    'bg-red-500'
                                 }`}
                             style={{ width: `${domainStats.rate}%` }}
                         />
@@ -121,7 +121,7 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                         placeholder="Search controls by ID, title, or description..."
                         value={searchTerm}
                         onChange={(e) => onSearchChange(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3051bb] focus:border-transparent"
                     />
                 </div>
             </div>
@@ -144,9 +144,9 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                                     <span className="text-sm font-semibold text-gray-600">
                                         {subdomainImplemented}/{subdomainTotal}
                                     </span>
-                                    <span className={`text-sm font-bold ${subdomainRate >= 80 ? 'text-green-600' :
-                                            subdomainRate >= 50 ? 'text-yellow-600' :
-                                                'text-red-600'
+                                    <span className={`text-sm font-bold ${subdomainRate >= 80 ? 'text-[#3051bb]' :
+                                        subdomainRate >= 50 ? 'text-yellow-600' :
+                                            'text-red-600'
                                         }`}>
                                         {subdomainRate}%
                                     </span>
@@ -158,15 +158,15 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                             {filteredControls.map((control) => (
                                 <div
                                     key={control.id}
-                                    className="border-2 border-gray-200 rounded-xl p-5 hover:border-green-500 hover:shadow-md transition-all"
+                                    className="border-2 border-gray-200 rounded-xl p-5 hover:border-[#3051bb] hover:shadow-md transition-all"
                                 >
                                     <div className="flex items-start gap-4">
                                         <div className="flex-shrink-0 mt-1">
                                             <button
                                                 onClick={() => onToggleControl(control.id)}
                                                 className={`w-7 h-7 rounded-lg border-2 flex items-center justify-center transition-all ${checkedControls[control.id]
-                                                        ? 'bg-green-600 border-green-600 shadow-lg'
-                                                        : 'border-gray-300 hover:border-green-500 hover:bg-green-50'
+                                                    ? 'bg-[#3051bb] border-[#3051bb] shadow-lg'
+                                                    : 'border-gray-300 hover:border-[#3051bb] hover:bg-blue-50'
                                                     }`}
                                             >
                                                 {checkedControls[control.id] && (
@@ -186,8 +186,8 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                                                     </div>
                                                     <div className="flex items-center gap-2 mt-2">
                                                         <span className={`px-3 py-1 text-xs font-bold rounded-full ${control.criticality === 'Mandatory'
-                                                                ? 'bg-red-100 text-red-700'
-                                                                : 'bg-blue-100 text-blue-700'
+                                                            ? 'bg-red-100 text-red-700'
+                                                            : 'bg-blue-100 text-blue-700'
                                                             }`}>
                                                             {control.criticality}
                                                         </span>
@@ -211,7 +211,7 @@ const AssessmentTab: React.FC<AssessmentTabProps> = ({
                                                     <ul className="space-y-1">
                                                         {control.evidence.map((item: string, idx: number) => (
                                                             <li key={idx} className="text-xs text-gray-600 flex items-start gap-2">
-                                                                <span className="text-green-600 mt-0.5">•</span>
+                                                                <span className="text-[#3051bb] mt-0.5">•</span>
                                                                 <span>{item}</span>
                                                             </li>
                                                         ))}

@@ -13,7 +13,7 @@ export const generatePDFReport = (
     let yOffset = 20;
 
     // Cover Page
-    doc.setFillColor(34, 197, 94); // green-600
+    doc.setFillColor(48, 81, 187); // Blue #3051bb
     doc.rect(0, 0, pageWidth, 60, 'F');
 
     doc.setTextColor(255, 255, 255);
@@ -39,7 +39,7 @@ export const generatePDFReport = (
 
     // Executive Summary
     doc.setFontSize(16);
-    doc.setTextColor(34, 197, 94);
+    doc.setTextColor(48, 81, 187);
     doc.text('Executive Summary', 20, yOffset);
     yOffset += 10;
 
@@ -61,7 +61,7 @@ export const generatePDFReport = (
         head: [['Metric', 'Value']],
         body: summaryData,
         theme: 'grid',
-        headStyles: { fillColor: [34, 197, 94] },
+        headStyles: { fillColor: [48, 81, 187] },
         margin: { left: 20, right: 20 }
     });
 
@@ -69,7 +69,7 @@ export const generatePDFReport = (
     doc.addPage();
     yOffset = 20;
     doc.setFontSize(16);
-    doc.setTextColor(34, 197, 94);
+    doc.setTextColor(48, 81, 187);
     doc.text('Domain Breakdown', 20, yOffset);
     yOffset += 10;
 
@@ -123,7 +123,7 @@ export const generatePDFReport = (
                 }
 
                 const status = checkedControls[control.id] ? '✓' : '✗';
-                const statusColor = checkedControls[control.id] ? [34, 197, 94] : [239, 68, 68];
+                const statusColor = checkedControls[control.id] ? [48, 81, 187] : [239, 68, 68];
 
                 doc.setFontSize(9);
                 doc.setTextColor(statusColor[0], statusColor[1], statusColor[2]);
@@ -181,7 +181,7 @@ export const generatePDFReport = (
         });
     } else {
         doc.setFontSize(12);
-        doc.setTextColor(34, 197, 94);
+        doc.setTextColor(48, 81, 187);
         doc.text('✓ All mandatory controls are implemented!', 20, yOffset);
     }
 

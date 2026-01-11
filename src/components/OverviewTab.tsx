@@ -42,10 +42,10 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
         <div className="space-y-6">
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600 hover:shadow-xl transition">
+                <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#3051bb] hover:shadow-xl transition">
                     <div className="flex items-center justify-between mb-2">
                         <div className="text-sm font-medium text-gray-600">Overall Compliance</div>
-                        <TrendingUp className="w-5 h-5 text-green-600" />
+                        <TrendingUp className="w-5 h-5 text-[#3051bb]" />
                     </div>
                     <div className="text-4xl font-bold text-gray-900">{stats.complianceRate}%</div>
                     <div className="text-xs text-gray-500 mt-1 flex items-center gap-1">
@@ -109,7 +109,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
                                 </div>
                                 <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                                     <div
-                                        className={`h-3 rounded-full transition-all duration-500 ${domainStats.rate >= 80 ? 'bg-green-600' :
+                                        className={`h-3 rounded-full transition-all duration-500 ${domainStats.rate >= 80 ? 'bg-[#3051bb]' :
                                             domainStats.rate >= 50 ? 'bg-yellow-500' :
                                                 'bg-red-500'
                                             }`}
@@ -120,7 +120,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
 
                             <div className="text-xs text-gray-500 flex items-center justify-between">
                                 <span>{domainStats.implemented} / {domainStats.total} controls</span>
-                                <span className="text-green-600 font-medium hover:underline">View Details →</span>
+                                <span className="text-[#3051bb] font-medium hover:underline">View Details →</span>
                             </div>
                         </div>
                     );
@@ -128,18 +128,18 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
             </div>
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 rounded-xl shadow-2xl p-8 text-white relative overflow-hidden">
+            <div className="bg-[#3051bb] rounded-xl shadow-2xl p-8 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
                 <div className="relative z-10">
                     <h3 className="text-2xl font-bold mb-2">Ready to assess your compliance?</h3>
-                    <p className="text-green-100 mb-6 text-lg">
+                    <p className="text-blue-100 mb-6 text-lg">
                         Start the interactive self-assessment to identify your current position and compliance gaps
                     </p>
                     <button
                         onClick={onStartAssessment}
-                        className="px-8 py-4 bg-white text-green-700 rounded-lg font-bold text-lg hover:bg-green-50 transition-all transform hover:scale-105 shadow-xl"
+                        className="px-8 py-4 bg-white text-[#3051bb] rounded-lg font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-xl"
                     >
                         Start Self-Assessment →
                     </button>
